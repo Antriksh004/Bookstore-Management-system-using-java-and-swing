@@ -51,7 +51,7 @@ public class AddNewBook extends javax.swing.JFrame {
         jLayeredPane1.setPreferredSize(new java.awt.Dimension(800, 400));
         jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 153));
         jPanel2.setPreferredSize(new java.awt.Dimension(400, 500));
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\antri\\OneDrive\\Desktop\\Java Project\\file (1).png")); // NOI18N
@@ -99,7 +99,7 @@ public class AddNewBook extends javax.swing.JFrame {
 
         jPanel7.setPreferredSize(new java.awt.Dimension(350, 350));
 
-        addBookButton.setBackground(new java.awt.Color(0, 102, 102));
+        addBookButton.setBackground(new java.awt.Color(0, 102, 153));
         addBookButton.setForeground(new java.awt.Color(255, 255, 255));
         addBookButton.setText("Add Book");
         addBookButton.addActionListener(new java.awt.event.ActionListener() {
@@ -152,9 +152,11 @@ public class AddNewBook extends javax.swing.JFrame {
         jLabel8.setText("Publication:");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel5.setForeground(new java.awt.Color(0, 102, 153));
         jLabel5.setText("Add New Book");
 
+        jButton2.setBackground(new java.awt.Color(0, 102, 153));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,6 +164,8 @@ public class AddNewBook extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(0, 102, 153));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Home");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,10 +260,9 @@ public class AddNewBook extends javax.swing.JFrame {
     }//GEN-LAST:event_addBookBookNameActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-//        dispose();
-//        Explore e= new Explore();
-//        e.setVisible(true);
+        dispose();
+        AdminBookController abc = new AdminBookController();
+        abc.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

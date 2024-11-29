@@ -55,7 +55,7 @@ public class IssueABook extends javax.swing.JFrame {
         jLayeredPane1.setPreferredSize(new java.awt.Dimension(800, 400));
         jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 153));
         jPanel2.setPreferredSize(new java.awt.Dimension(400, 500));
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\antri\\OneDrive\\Desktop\\Java Project\\file (1).png")); // NOI18N

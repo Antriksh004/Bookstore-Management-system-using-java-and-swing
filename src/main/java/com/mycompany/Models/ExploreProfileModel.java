@@ -23,12 +23,16 @@ public class ExploreProfileModel {
         
         
     }
+    public static String booksDue(String userid){
+        String count = BookController.getCountOfDueBooks(userid);
+        return count;
+    }
     
-    public ExploreProfileModel(String username, String userId, String noOfBooksDue){
+    public ExploreProfileModel(String username, String userId){
         this.username = username;
         this.userId = userId;
         this.noOfBooksIssued = booksIssued(userId);
-        this.noOfBooksDue = noOfBooksDue;
+        this.noOfBooksDue = booksDue(userId);
     }
     
 }

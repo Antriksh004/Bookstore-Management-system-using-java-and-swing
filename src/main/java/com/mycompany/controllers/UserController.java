@@ -9,6 +9,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import com.mycompany.Models.UserModel;
 
 
 /**
@@ -94,6 +99,57 @@ public class UserController {
             }
         }
         return false;
+    }
+    static public boolean removeUserById(String id){
+        Connection con = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        try {
+            connection c = new connection();
+            con = c.getConnection();
+            String query = "DELETE FROM user WHERE userid = '" + id  + "';";
+            System.out.println(query);
+            
+                            
+            
+            
+           
+            stmt = con.createStatement();
+            int rowsAffected = stmt.executeUpdate(query);
+            System.out.println(rowsAffected);
+            return true;
+            
+            
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+    static public List<UserModel> getUsers() {
+        List<UserModel> users = new ArrayList<>();
+        connection c = new connection();
+
+        try (Connection conn = c.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT * FROM user ORDER BY username ASC")) {
+
+            while (rs.next()) {
+//                int id = rs.getInt("id");
+//                String name = rs.getString("name");
+//                int age = rs.getInt("age");
+//                String major = rs.getString("major");
+                String username = rs.getString("username");
+                String mobile = rs.getString("mobile");
+                String id = rs.getString("userid");
+                String emailId = rs.getString("email_id");
+                
+
+                users.add(new UserModel(username, mobile, id, emailId));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return users;
     }
 //    public static void main(String[] args){
 //        UserController sosc = new UserController();

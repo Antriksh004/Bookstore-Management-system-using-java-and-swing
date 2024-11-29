@@ -63,7 +63,7 @@ public class AdminSignup extends javax.swing.JFrame {
 
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 153));
         jPanel2.setPreferredSize(new java.awt.Dimension(400, 500));
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\antri\\OneDrive\\Desktop\\Java Project\\file (1).png")); // NOI18N
@@ -107,11 +107,11 @@ public class AdminSignup extends javax.swing.JFrame {
         jPanel3.setPreferredSize(new java.awt.Dimension(390, 500));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel5.setForeground(new java.awt.Color(0, 102, 153));
         jLabel5.setText("SIGNUP");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel9.setForeground(new java.awt.Color(0, 102, 153));
         jLabel9.setText("Admin Access code ");
 
         adminSignupAdminAccessCode.addActionListener(new java.awt.event.ActionListener() {
@@ -121,14 +121,14 @@ public class AdminSignup extends javax.swing.JFrame {
         });
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel10.setForeground(new java.awt.Color(0, 102, 153));
         jLabel10.setText("Admin name:");
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel11.setForeground(new java.awt.Color(0, 102, 153));
         jLabel11.setText("Password: ");
 
-        adminSignupButton.setBackground(new java.awt.Color(0, 102, 102));
+        adminSignupButton.setBackground(new java.awt.Color(0, 102, 153));
         adminSignupButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         adminSignupButton.setForeground(new java.awt.Color(255, 255, 255));
         adminSignupButton.setText("Signup");
@@ -139,11 +139,11 @@ public class AdminSignup extends javax.swing.JFrame {
         });
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel13.setForeground(new java.awt.Color(0, 102, 153));
         jLabel13.setText("Answer:");
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel14.setForeground(new java.awt.Color(0, 102, 153));
         jLabel14.setText("Email Id: ");
 
         adminSignupSecurityQuestion.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +153,7 @@ public class AdminSignup extends javax.swing.JFrame {
         });
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel12.setForeground(new java.awt.Color(0, 102, 153));
         jLabel12.setText("Mobile: ");
 
         adminSignupEmailId.addActionListener(new java.awt.event.ActionListener() {
@@ -183,7 +183,7 @@ public class AdminSignup extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(102, 51, 0));
         jLabel4.setText("Already have an account?");
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 102));
+        jButton1.setBackground(new java.awt.Color(0, 102, 153));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -193,7 +193,7 @@ public class AdminSignup extends javax.swing.JFrame {
         });
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel15.setForeground(new java.awt.Color(0, 102, 153));
         jLabel15.setText("Security Question:");
 
         adminSignupPassword.addActionListener(new java.awt.event.ActionListener() {
@@ -203,7 +203,7 @@ public class AdminSignup extends javax.swing.JFrame {
         });
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel16.setForeground(new java.awt.Color(0, 102, 153));
         jLabel16.setText("Admin Id: ");
 
         adminSignupAdminId.addActionListener(new java.awt.event.ActionListener() {
@@ -315,7 +315,7 @@ public class AdminSignup extends javax.swing.JFrame {
                 .addGap(105, 105, 105))
         );
 
-        jButton5.setBackground(new java.awt.Color(0, 102, 102));
+        jButton5.setBackground(new java.awt.Color(0, 102, 153));
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Home");
         jButton5.addActionListener(new java.awt.event.ActionListener() {

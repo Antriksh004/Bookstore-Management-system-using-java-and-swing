@@ -330,7 +330,7 @@ public class LoginPage extends javax.swing.JFrame {
         boolean isLoggedIn = UserController.checkLogin(userid, username, password);
         if(isLoggedIn){
             dispose();
-            ExploreProfileModel epm = new ExploreProfileModel(username, userid, "0");
+            ExploreProfileModel epm = new ExploreProfileModel(username, userid);
             Explore e = new Explore(epm.username, epm.userId, epm.noOfBooksIssued, epm.noOfBooksDue);
             e.setVisible(true);
         }

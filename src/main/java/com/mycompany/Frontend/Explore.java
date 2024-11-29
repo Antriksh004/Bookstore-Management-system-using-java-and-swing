@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.Frontend;
+import com.mycompany.controllers.BookController;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -50,7 +52,7 @@ public class Explore extends javax.swing.JFrame {
         jLayeredPane3 = new javax.swing.JLayeredPane();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        exploreSearchField = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -65,11 +67,10 @@ public class Explore extends javax.swing.JFrame {
         exploreNoOfBooksIssued = new javax.swing.JTextField();
         exploreNoOfBooksDue = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         jLayeredPane4 = new javax.swing.JLayeredPane();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
+        booksComingSoonButton = new javax.swing.JButton();
         jLayeredPane5 = new javax.swing.JLayeredPane();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -105,13 +106,12 @@ public class Explore extends javax.swing.JFrame {
         jLabel2.setText("Search book:");
         jLayeredPane3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, 30));
 
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        exploreSearchField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                exploreSearchFieldActionPerformed(evt);
             }
         });
-        jLayeredPane3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 210, 30));
+        jLayeredPane3.add(exploreSearchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 210, 30));
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -136,6 +136,11 @@ public class Explore extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(0, 0, 0));
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Search");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jLayeredPane3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 100, 30));
 
         jLayeredPane1.setLayer(jLayeredPane3, javax.swing.JLayeredPane.POPUP_LAYER);
@@ -184,13 +189,12 @@ public class Explore extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Books Inventory");
-        jLayeredPane2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
-
-        jButton6.setBackground(new java.awt.Color(0, 0, 0));
-        jButton6.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("WishList");
-        jLayeredPane2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, -1));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jLayeredPane2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, -1, -1));
 
         jLayeredPane1.setLayer(jLayeredPane2, javax.swing.JLayeredPane.POPUP_LAYER);
         jLayeredPane1.add(jLayeredPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 290, 340));
@@ -210,11 +214,16 @@ public class Explore extends javax.swing.JFrame {
         jLayeredPane4.setLayer(jLabel9, javax.swing.JLayeredPane.POPUP_LAYER);
         jLayeredPane4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 54, 352, -1));
 
-        jButton7.setBackground(new java.awt.Color(0, 0, 0));
-        jButton7.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Books coming soon..");
-        jLayeredPane4.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 170, -1));
+        booksComingSoonButton.setBackground(new java.awt.Color(0, 0, 0));
+        booksComingSoonButton.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        booksComingSoonButton.setForeground(new java.awt.Color(255, 255, 255));
+        booksComingSoonButton.setText("Books coming soon..");
+        booksComingSoonButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                booksComingSoonButtonActionPerformed(evt);
+            }
+        });
+        jLayeredPane4.add(booksComingSoonButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 170, -1));
 
         jLayeredPane1.setLayer(jLayeredPane4, javax.swing.JLayeredPane.POPUP_LAYER);
         jLayeredPane1.add(jLayeredPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 380, 160));
@@ -265,9 +274,9 @@ public class Explore extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void exploreSearchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exploreSearchFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_exploreSearchFieldActionPerformed
 
     private void exploreUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exploreUserNameActionPerformed
         // TODO add your handling code here:
@@ -300,6 +309,35 @@ public class Explore extends javax.swing.JFrame {
         ContactUs cu = new ContactUs();
         cu.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        ListOfBooks lob = new ListOfBooks(this.username, this.userId, this.noOfBooksIssued, this.noOfBooksDue);
+        lob.setVisible(true);
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void booksComingSoonButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booksComingSoonButtonActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        ListOfBooks lob = new ListOfBooks(this.username, this.userId, this.noOfBooksIssued, this.noOfBooksDue);
+        lob.setVisible(true);
+    }//GEN-LAST:event_booksComingSoonButtonActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        String bookname = exploreSearchField.getText();
+        boolean isBookAvailable = BookController.getBookByName(bookname);
+        if(isBookAvailable){
+            JOptionPane.showMessageDialog(rootPane, "Book is available!", bookname, JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Book is not available!", bookname, JOptionPane.INFORMATION_MESSAGE);
+
+        }
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -337,8 +375,10 @@ public class Explore extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton booksComingSoonButton;
     private javax.swing.JTextField exploreNoOfBooksDue;
     private javax.swing.JTextField exploreNoOfBooksIssued;
+    private javax.swing.JTextField exploreSearchField;
     private javax.swing.JTextField exploreUserId;
     private javax.swing.JTextField exploreUserName;
     private javax.swing.JButton jButton1;
@@ -346,8 +386,6 @@ public class Explore extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -365,6 +403,5 @@ public class Explore extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane3;
     private javax.swing.JLayeredPane jLayeredPane4;
     private javax.swing.JLayeredPane jLayeredPane5;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
