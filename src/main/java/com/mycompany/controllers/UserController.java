@@ -4,6 +4,8 @@
  */
 package com.mycompany.controllers;
 
+import com.mycompany.Models.BooksComingSoon;
+import com.mycompany.Models.InventoryBooksModel;
 import com.mycompany.database.connection;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -151,6 +153,67 @@ public class UserController {
         }
         return users;
     }
+    static public String[] getUserById(String userId){
+        Connection con = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        try {
+            connection c = new connection();
+            con = c.getConnection();
+            String query = "SELECT * FROM user WHERE userid = '" + userId  + "';";
+            System.out.println(query);
+            
+                            
+            
+            
+           
+            stmt = con.createStatement();
+            rs = stmt.executeQuery(query);
+            if (rs.next()) { 
+                    String username = rs.getString("username");
+                    String password = rs.getString("password");
+                    String mobile = rs.getString("mobile");
+                    String securityQuestion = rs.getString("security_question");
+                    String securityAnswer = rs.getString("security_answer");
+                    String emailId = rs.getString("email_id");
+                    String[] user = {username, password, mobile, securityQuestion, securityAnswer, emailId};
+                    
+                    
+                    return user;
+                }
+
+            
+            
+            
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+    static public List<InventoryBooksModel> listInventoryBooks(String userId) {
+        List<InventoryBooksModel> books = new ArrayList<>();
+        connection c = new connection();
+
+        try (Connection conn = c.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT * FROM issuedbooks where userid = '"+userId+"';")) {
+
+            while (rs.next()) {
+//                
+                String bookname = rs.getString("book_name");
+                String bookid = rs.getString("book_id");
+                String issued_date = rs.getString("issued_date");
+                String due_date = rs.getString("due_date");
+                System.out.println(bookname+bookid+issued_date+due_date);
+                
+
+                books.add(new InventoryBooksModel(bookname, bookid, issued_date, due_date));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return books;
+    }
 //    public static void main(String[] args){
 //        UserController sosc = new UserController();
 ////        boolean isSignedIn = sosc.InsertStudentOrStaffData("Mridul","22bcs056", "student", "9855985541", "22bcs056");
@@ -159,4 +222,5 @@ public class UserController {
 //        boolean isLoggedIn = sosc.checkLogin("Mridul", "22bcs056");
 //        System.out.println(isLoggedIn);
 //    }
+    
 }

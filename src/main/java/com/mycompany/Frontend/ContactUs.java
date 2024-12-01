@@ -4,6 +4,12 @@
  */
 package com.mycompany.Frontend;
 
+import com.mycompany.database.connection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ANTRIKSH
@@ -34,9 +40,9 @@ public class ContactUs extends javax.swing.JFrame {
         jLayeredPane2 = new javax.swing.JLayeredPane();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        contactUsEmail = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        contactUsQuery = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -96,11 +102,11 @@ public class ContactUs extends javax.swing.JFrame {
 
         jLabel5.setText("Email");
         jLayeredPane2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
-        jLayeredPane2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 290, 30));
+        jLayeredPane2.add(contactUsEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 290, 30));
 
         jLabel6.setText("Query");
         jLayeredPane2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
-        jLayeredPane2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 290, 130));
+        jLayeredPane2.add(contactUsQuery, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 290, 130));
 
         jButton1.setBackground(new java.awt.Color(0, 102, 102));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -187,10 +193,22 @@ public class ContactUs extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-//         dispose();
-//        Explore e = new Explore();
-//            e.setVisible(true);
+        try {
+         
+//            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/librarymanagement", "root", "root");
+            connection c = new connection();
+            Connection con = c.getConnection();
+            PreparedStatement ps = con.prepareStatement("insert into queries(email_id, query) values(?,?)");
+            ps.setString(1, contactUsEmail.getText());
+            ps.setString(2, contactUsQuery.getText());
+            
+//            System.out.println(bname.getText(), bname.);
+            ps.executeUpdate();
+            
+        } catch (SQLException err) {
+            System.out.println("ERROR: " + err);
+            JOptionPane.showMessageDialog(rootPane, "Error Occurred : " + err.getMessage());
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -230,6 +248,8 @@ public class ContactUs extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField contactUsEmail;
+    private javax.swing.JTextField contactUsQuery;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -242,7 +262,5 @@ public class ContactUs extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

@@ -54,6 +54,35 @@ public class BookController {
         return false;
         
     }
+    public boolean InsertDonatedBookData(String name, String price, String author, String publication, String pickupAddress){
+        Connection con = null;
+        Statement stmt = null;
+        
+        
+        
+        String query = "INSERT INTO donated_books (name, price, author,publication, picku_address) "
+                 + "VALUES ('" + name + "', '" + price + "', '" + author +"', '" + publication +"', '" + pickupAddress + "');"; // Proper SQL syntax
+        try {
+            connection c = new connection();
+            con = c.getConnection();
+            
+            
+            System.out.println("Query is: " + query);
+            
+            //Create Statement
+            Statement st = con.createStatement();
+            int val = st.executeUpdate(query);
+
+            System.out.println(val + " row(s) affected");
+            
+            con.close();
+            return true;
+        } catch (SQLException e) {
+            System.err.println("SQL Exception: " + e.getMessage());
+        }
+        return false;
+        
+    }
     static public boolean InsertIssuedBook(String userId, String username, String emailId, String bookid, String bookname){
         Connection con = null;
         Statement stmt = null;
@@ -130,7 +159,7 @@ public class BookController {
         con = c.getConnection();
 
         
-        String query = "SELECT COUNT(*) AS count FROM issuedbooks WHERE userid = ? HAVING due_date < ?";
+        String query = "SELECT COUNT(*) AS count FROM issuedbooks WHERE userid = ? AND due_date < ?";
         pstmt = con.prepareStatement(query);
         pstmt.setString(1, userId); 
         Timestamp ts = new Timestamp(System.currentTimeMillis());
@@ -234,6 +263,31 @@ public class BookController {
             e.printStackTrace();
         }
         return false;
+    }
+    static public List<BookModel> getBooks() {
+        List<BookModel> books = new ArrayList<>();
+        connection c = new connection();
+
+        try (Connection conn = c.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT * FROM books ORDER BY book_id")) {
+
+            while (rs.next()) {
+//                
+                String name = rs.getString("name");
+                String price = rs.getString("price");
+                String author = rs.getString("author");
+                String publication = rs.getString("publication");
+                
+                
+                
+
+                books.add(new BookModel(name, price, author, publication));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return books;
     }
 
 

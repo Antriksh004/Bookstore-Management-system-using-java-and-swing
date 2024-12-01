@@ -32,6 +32,7 @@ public class AdminDashboard extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         adminDashboardUserController = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        adminDashboardUserController1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 500));
@@ -79,7 +80,7 @@ public class AdminDashboard extends javax.swing.JFrame {
         adminDashboardUserController.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         adminDashboardUserController.setForeground(new java.awt.Color(255, 255, 255));
         adminDashboardUserController.setIcon(new javax.swing.ImageIcon("C:\\Users\\antri\\OneDrive\\Desktop\\Java Project\\file (1).png")); // NOI18N
-        adminDashboardUserController.setText("USER CONTROLLER");
+        adminDashboardUserController.setText("ADMIN CONTROLLER");
         adminDashboardUserController.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adminDashboardUserControllerActionPerformed(evt);
@@ -97,9 +98,21 @@ public class AdminDashboard extends javax.swing.JFrame {
             }
         });
 
+        adminDashboardUserController1.setBackground(new java.awt.Color(0, 102, 153));
+        adminDashboardUserController1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        adminDashboardUserController1.setForeground(new java.awt.Color(255, 255, 255));
+        adminDashboardUserController1.setIcon(new javax.swing.ImageIcon("C:\\Users\\antri\\OneDrive\\Desktop\\Java Project\\file (1).png")); // NOI18N
+        adminDashboardUserController1.setText("USER CONTROLLER");
+        adminDashboardUserController1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminDashboardUserController1ActionPerformed(evt);
+            }
+        });
+
         jLayeredPane1.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(adminDashboardUserController, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jButton3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(adminDashboardUserController1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -114,16 +127,26 @@ public class AdminDashboard extends javax.swing.JFrame {
                     .addComponent(adminDashboardUserController, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addGap(195, 195, 195)
+                    .addComponent(adminDashboardUserController1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(190, Short.MAX_VALUE)))
         );
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(adminDashboardUserController, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(138, 138, 138)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(199, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(adminDashboardUserController, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(118, Short.MAX_VALUE))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addGap(155, 155, 155)
+                    .addComponent(adminDashboardUserController1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(282, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -157,8 +180,8 @@ public class AdminDashboard extends javax.swing.JFrame {
     private void adminDashboardUserControllerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminDashboardUserControllerActionPerformed
         // TODO add your handling code here:
         dispose();
-        AdminUserController auc = new AdminUserController();
-        auc.setVisible(true);
+        AdminAdminController aac = new AdminAdminController();
+        aac.setVisible(true);
         
         
     }//GEN-LAST:event_adminDashboardUserControllerActionPerformed
@@ -169,6 +192,13 @@ public class AdminDashboard extends javax.swing.JFrame {
         Home h = new Home();
         h.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void adminDashboardUserController1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminDashboardUserController1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        AdminUserController auc = new AdminUserController();
+        auc.setVisible(true);
+    }//GEN-LAST:event_adminDashboardUserController1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,6 +237,7 @@ public class AdminDashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton adminDashboardUserController;
+    private javax.swing.JButton adminDashboardUserController1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;

@@ -313,8 +313,8 @@ public class Explore extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         dispose();
-        ListOfBooks lob = new ListOfBooks(this.username, this.userId, this.noOfBooksIssued, this.noOfBooksDue);
-        lob.setVisible(true);
+        BooksInventory bi = new BooksInventory(this.username, this.userId, this.noOfBooksIssued, this.noOfBooksDue);
+        bi.setVisible(true);
         
     }//GEN-LAST:event_jButton5ActionPerformed
 
